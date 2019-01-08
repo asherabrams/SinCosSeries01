@@ -17,7 +17,7 @@ using namespace std;
 long int x=1;
 long int y;
 double func01(double);
-double z, n, s, ssum, sum = 1;
+double z, n, s, c, ssum, csum, sum = 1;
 
 // DEFINITIONS
 double func01(double x)
@@ -28,12 +28,15 @@ double func01(double x)
         z = double(pow(n,y)/x);
         sum = sum + z;
         s = (y%2)*pow(-1,((y/2)%2)) * z;
+        c = ((y-1)%2)*pow(-1,(((y/2)-1)%2)) * z;
         ssum = ssum + s;
+        csum = csum + c;
         cout << y << '\n';
         cout << x << '\n';
         cout << z << '\n';
         cout << sum << '\n';
         cout << ssum << '\n';
+        cout << (1 - csum) << '\n';
         cout << '\n';
     }
     return x;
