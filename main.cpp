@@ -5,7 +5,8 @@
 //  Created by Asher Abrams on 2019/01/07.
 //  Copyright © 2019 | 5779 Asher Abrams. All rights reserved.
 //
-//  Evaluates an approximation of exp(x), sin(x), and cos(x) using a series.
+//  Evaluates an approximation of exp(x), sin(x), and cos(x) 
+//  using the Taylor series.
 //
 // PREPROCESSOR
 #include <iostream>
@@ -17,20 +18,20 @@ using namespace std;
 long int term01 = 1;
 long int iterations01;
 double func01(double);
-double invFactorial01, userin01, s, c, ssum, csum, sum = 1;
+double invFactorial01, userin01, sterm, cterm, ssum, csum, sum = 1;
 
 // DEFINITIONS
 double func01(double factorial01)
 {
-    for(iterations01 = 1; iterations01 < 10; iterations01++)
+    for(iterations01 = 1; iterations01 < 50; iterations01++)
     {
         factorial01 = factorial01*iterations01;
         invFactorial01 = double(pow(userin01,iterations01)/factorial01);
         sum = sum + invFactorial01;
-        s = (iterations01%2)*pow(-1,((iterations01/2)%2)) * invFactorial01;
-        c = ((iterations01+1)%2)*pow(-1,(((iterations01/2)+1)%2)) * invFactorial01;
-        ssum = ssum + s;
-        csum = csum + c;
+        sterm = (iterations01%2)*pow(-1,((iterations01/2)%2)) * invFactorial01;
+        cterm = ((iterations01+1)%2)*pow(-1,(((iterations01/2)+1)%2)) * invFactorial01;
+        ssum = ssum + sterm;
+        csum = csum + cterm;
         cout << "Iteration " << iterations01 << '\n';
         cout << "Factorial = " << factorial01 << '\n';
         cout << "1/Factorial = " << invFactorial01 << '\n';
