@@ -22,21 +22,21 @@ double z, n, s, c, ssum, csum, sum = 1;
 // DEFINITIONS
 double func01(double x)
 {
-    for(y = 1; y < 50; y++)
+    for(y = 1; y < 20; y++)
     {
         x = x*y;
         z = double(pow(n,y)/x);
         sum = sum + z;
         s = (y%2)*pow(-1,((y/2)%2)) * z;
-        c = ((y-1)%2)*pow(-1,(((y/2)-1)%2)) * z;
+        c = ((y+1)%2)*pow(-1,(((y/2)+1)%2)) * z;
         ssum = ssum + s;
         csum = csum + c;
         cout << y << '\n';
         cout << x << '\n';
         cout << z << '\n';
-        cout << sum << '\n';
-        cout << ssum << '\n';
-        cout << (1 - csum) << '\n';
+        cout << "Exp = " << sum << '\n';
+        cout << "Sin = " << ssum << '\n';
+        cout << "Cos = " << (1 - csum) << '\n';
         cout << '\n';
     }
     return x;
@@ -44,7 +44,7 @@ double func01(double x)
 
 // MAIN
 int main() {
-    cout << "Evaluates exp(n). N?\n";
+    cout << "Evaluates exp(n), sin(n), and cos(n). N?\n";
     cin >> n;
     if (double(n))
     {
@@ -54,7 +54,3 @@ int main() {
     cout << '\n';
     return 0;
 }
-
-
-
-
