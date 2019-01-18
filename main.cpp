@@ -34,7 +34,7 @@ double func01(double factorial01)
         csum = csum + cterm;
         cout << "Iteration " << iterations01 << '\n';
         cout << "Factorial = " << factorial01 << '\n';
-        cout << "1/Factorial = " << invFactorial01 << '\n';
+        cout << "x^n/Factorial = " << invFactorial01 << '\n';
         cout << "Exp(x) = " << sum << '\n';
         cout << "Sin(x) = " << ssum << '\n';
         cout << "Cos(x) = " << (1 - csum) << '\n';
