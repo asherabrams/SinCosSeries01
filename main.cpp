@@ -15,47 +15,44 @@
 using namespace std;
 
 // DECLARATIONS
-long int term01 = 1;
-long int iterations01;
+long int term = 1;
+long int iterations;
 double func01(double);
-double invFactorial01, userin01, sterm, cterm, ssum, csum, sum = 1;
+double factorial, invFactorial, userin, sterm, cterm, ssum, csum, esum = 1;
 
 // DEFINITIONS
-double func01(double factorial01)
+double func01(double factorial)
 {
-    for(iterations01 = 1; iterations01 < 50; iterations01++)
+    for(iterations = 1; iterations < 50; iterations++)
     {
-        factorial01 = factorial01*iterations01;
-        invFactorial01 = double(pow(userin01,iterations01)/factorial01);
-        sum = sum + invFactorial01;
-        sterm = (iterations01%2)*pow(-1,((iterations01/2)%2)) * invFactorial01;
-        cterm = ((iterations01+1)%2)*pow(-1,(((iterations01/2)+1)%2)) * invFactorial01;
+        factorial = factorial * iterations;
+        invFactorial = double(pow(userin,iterations)/factorial);
+        esum = esum + invFactorial;
+        sterm = (iterations%2) * pow(-1,((iterations/2)%2)) * invFactorial;
+        cterm = ((iterations+1)%2) * pow(-1,(((iterations/2)+1)%2)) * invFactorial;
         ssum = ssum + sterm;
         csum = csum + cterm;
-        cout << "Iteration " << iterations01 << '\n';
-        cout << "Factorial = " << factorial01 << '\n';
-        cout << "x^n/Factorial = " << invFactorial01 << '\n';
-        cout << "Exp(x) = " << sum << '\n';
+        cout << "Iteration " << iterations << '\n';
+        cout << "Factorial " << iterations << " = " << factorial << '\n';
+        cout << "x^n/Factorial = " << invFactorial << '\n';
+        cout << "Exp(x) = " << esum << '\n';
         cout << "Sin(x) = " << ssum << '\n';
         cout << "Cos(x) = " << (1 - csum) << '\n';
         cout << '\n';
     }
-    return factorial01;
+    return factorial;
 }
 
 // MAIN
 int main() {
     cout << "Evaluates exp(x), sin(x), and cos(x). X?\n";
-    cin >> userin01;
-    if (double(userin01))
+    cin >> userin;
+    if (double(userin))
     {
-        func01(term01);
+        func01(term);
     }
     else cout << "Error.\n";
     cout << '\n';
     return 0;
 }
-
-
-
 
