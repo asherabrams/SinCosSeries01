@@ -32,12 +32,13 @@ double func01(double factorial)
         cterm = ((iterations+1)%2) * pow(-1,(((iterations/2)+1)%2)) * invFactorial;
         ssum = ssum + sterm;
         csum = csum + cterm;
+        cout << "x = " << userin << '\n';
         cout << "Iteration " << iterations << '\n';
         cout << "Factorial " << iterations << " = " << factorial << '\n';
         cout << "x^n/Factorial = " << invFactorial << '\n';
         cout << "Exp(x) = " << esum << '\n';
-        cout << "Sin(x) = " << ssum << '\n';
-        cout << "Cos(x) = " << (1 - csum) << '\n';
+        cout << "Sin(x radians) = " << ssum << '\n';
+        cout << "Cos(x radians) = " << (1 - csum) << '\n';
         cout << '\n';
     }
     return factorial;
@@ -55,4 +56,7 @@ int main() {
     cout << '\n';
     return 0;
 }
+
+
+
 
